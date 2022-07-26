@@ -6,6 +6,7 @@ networks:
 
 services:
   podcloud-api:
+    container_name: podcloud-api
     image: $DOCKER_IMAGE
     env_file:
       - .env
