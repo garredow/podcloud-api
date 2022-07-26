@@ -1,10 +1,10 @@
 import cors from '@fastify/cors';
-import Fastify from 'fastify';
+import Fastify, { FastifyServerOptions } from 'fastify';
 import verify from 'fastify-auth0-verify';
 import { config } from './lib/config';
 import { routes } from './routes';
 
-export function configureServer(options = {}) {
+export function configureServer(options: FastifyServerOptions = {}) {
   const fastify = Fastify(options);
 
   fastify.register(cors, {

@@ -1,9 +1,11 @@
 import { config } from './lib/config';
+require('newrelic');
 import { configureServer } from './server';
 
 const server = configureServer({
   logger: {
     name: 'podcloud-api',
+    enabled: config.logger.enabled,
     level: config.logger.level,
     file: config.logger.file,
     formatters: {

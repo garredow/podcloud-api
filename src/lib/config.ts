@@ -39,9 +39,6 @@ export type Config = {
     apiKey: string;
     apiSecret: string;
   };
-  caching: {
-    dataStaleMs: number;
-  };
 };
 
 function createConfig() {
@@ -70,9 +67,6 @@ function createConfig() {
     podcastIndex: {
       apiKey: process.env.PI_API_KEY!,
       apiSecret: process.env.PI_API_SECRET!,
-    },
-    caching: {
-      dataStaleMs: Number(process.env.DATA_STALE_MS),
     },
   };
 
@@ -103,9 +97,6 @@ function createConfig() {
     podcastIndex: {
       apiKey: Joi.string().required(),
       apiSecret: Joi.string().required(),
-    },
-    caching: {
-      dataStaleMs: Joi.number().required(),
     },
   });
   const { error } = schema.validate(config, { abortEarly: false });

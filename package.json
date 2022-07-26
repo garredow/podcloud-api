@@ -24,6 +24,7 @@
     "jsonwebtoken": "^8.5.1",
     "jwks-rsa": "^2.1.4",
     "knex": "^2.2.0",
+    "newrelic": "^8.16.0",
     "node-vibrant": "^3.2.1-alpha.1",
     "pg": "^8.7.3",
     "pino": "^8.3.0",
