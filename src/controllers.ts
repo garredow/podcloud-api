@@ -1,7 +1,7 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
 const { version: apiVersion } = require('../package.json');
 
-export function getHealth(request: FastifyRequest, reply: FastifyReply) {
+export async function getHealth(request: FastifyRequest, reply: FastifyReply) {
   reply.send({
     version: apiVersion,
     uptime: Math.floor(process.uptime() * 1000),
