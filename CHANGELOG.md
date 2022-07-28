@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/garredow/podcloud-api/compare/v1.0.0...v1.0.1) (2022-07-28)
+
+
+### Bug Fixes
+
+* fix typo ([391fa47](https://github.com/garredow/podcloud-api/commit/391fa47e854cb56a4dd1615f07f617609c30cfab))
+
 # 1.0.0 (2022-07-28)
 
 
