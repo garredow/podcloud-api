@@ -1,19 +1,23 @@
 {
   "name": "podcloud-api",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "start": "tsc && node dist/index.js",
     "build": "tsc",
     "commit": "cz"
   },
   "author": "Garrett Downs",
-  "license": "ISC",
+  "license": "GPLv3",
   "repository": {
     "type": "git",
     "url": "https://github.com/garredow/podcloud-api.git"
   },
+  "bugs": {
+    "url": "https://github.com/garredow/podcloud-api/issues"
+  },
+  "homepage": "https://github.com/garredow/podcloud-api#readme",
   "dependencies": {
     "@fastify/cors": "^8.0.0",
     "@fastify/middie": "^8.0.0",
@@ -34,6 +38,7 @@
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
+    "@semantic-release/npm": "^9.0.1",
     "@types/jsonwebtoken": "^8.5.8",
     "@types/node": "^17.0.13",
     "@types/pg": "^8.6.5",
