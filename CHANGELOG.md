@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/garredow/podcloud-api/compare/v1.0.1...v1.0.2) (2022-07-28)
+
+
+### Bug Fixes
+
+* fix health check endpoint ([621be80](https://github.com/garredow/podcloud-api/commit/621be801f67c9078148cff9702a1328915d84151))
+
 ## [1.0.1](https://github.com/garredow/podcloud-api/compare/v1.0.0...v1.0.1) (2022-07-28)
 
 
