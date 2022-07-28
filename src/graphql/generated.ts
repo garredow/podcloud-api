@@ -237,8 +237,8 @@ export type Palette = {
   light_vibrant?: Maybe<Scalars['String']>;
   muted?: Maybe<Scalars['String']>;
   vibrant?: Maybe<Scalars['String']>;
-  created_at: Scalars['BigInt'];
-  updated_at: Scalars['BigInt'];
+  created_at: Scalars['DateTime'];
+  updated_at: Scalars['DateTime'];
 };
 
 export type Podcast = {
@@ -252,8 +252,8 @@ export type Podcast = {
   artwork: Artwork;
   episodes: Array<Episode>;
   is_subscribed: Scalars['Boolean'];
-  created_at: Scalars['BigInt'];
-  updated_at: Scalars['BigInt'];
+  created_at: Scalars['DateTime'];
+  updated_at: Scalars['DateTime'];
 };
 
 export type PodcastepisodesArgs = {
@@ -264,7 +264,7 @@ export type Episode = {
   __typename?: 'Episode';
   id: Scalars['BigInt'];
   podcast_id: Scalars['BigInt'];
-  date: Scalars['BigInt'];
+  date: Scalars['DateTime'];
   title: Scalars['String'];
   description?: Maybe<Scalars['String']>;
   progress?: Maybe<Scalars['Int']>;
@@ -279,8 +279,8 @@ export type Episode = {
   episode_type?: Maybe<Scalars['String']>;
   podcast: Podcast;
   artwork: Artwork;
-  created_at: Scalars['BigInt'];
-  updated_at: Scalars['BigInt'];
+  created_at: Scalars['DateTime'];
+  updated_at: Scalars['DateTime'];
 };
 
 export type Category = {
@@ -297,8 +297,8 @@ export type User = {
   email?: Maybe<Scalars['String']>;
   avatar_url?: Maybe<Scalars['String']>;
   subscriptions: Array<Podcast>;
-  created_at: Scalars['BigInt'];
-  updated_at: Scalars['BigInt'];
+  created_at: Scalars['DateTime'];
+  updated_at: Scalars['DateTime'];
 };
 
 export type Health = {
@@ -875,8 +875,8 @@ export type PaletteResolvers<
   light_vibrant?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   muted?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   vibrant?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  created_at?: Resolver<ResolversTypes['BigInt'], ParentType, ContextType>;
-  updated_at?: Resolver<ResolversTypes['BigInt'], ParentType, ContextType>;
+  created_at?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
+  updated_at?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
   isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -898,8 +898,8 @@ export type PodcastResolvers<
     RequireFields<PodcastepisodesArgs, 'count'>
   >;
   is_subscribed?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
-  created_at?: Resolver<ResolversTypes['BigInt'], ParentType, ContextType>;
-  updated_at?: Resolver<ResolversTypes['BigInt'], ParentType, ContextType>;
+  created_at?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
+  updated_at?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
   isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -909,7 +909,7 @@ export type EpisodeResolvers<
 > = {
   id?: Resolver<ResolversTypes['BigInt'], ParentType, ContextType>;
   podcast_id?: Resolver<ResolversTypes['BigInt'], ParentType, ContextType>;
-  date?: Resolver<ResolversTypes['BigInt'], ParentType, ContextType>;
+  date?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
   title?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   description?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   progress?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
@@ -924,8 +924,8 @@ export type EpisodeResolvers<
   episode_type?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   podcast?: Resolver<ResolversTypes['Podcast'], ParentType, ContextType>;
   artwork?: Resolver<ResolversTypes['Artwork'], ParentType, ContextType>;
-  created_at?: Resolver<ResolversTypes['BigInt'], ParentType, ContextType>;
-  updated_at?: Resolver<ResolversTypes['BigInt'], ParentType, ContextType>;
+  created_at?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
+  updated_at?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
   isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -948,8 +948,8 @@ export type UserResolvers<
   email?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   avatar_url?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   subscriptions?: Resolver<Array<ResolversTypes['Podcast']>, ParentType, ContextType>;
-  created_at?: Resolver<ResolversTypes['BigInt'], ParentType, ContextType>;
-  updated_at?: Resolver<ResolversTypes['BigInt'], ParentType, ContextType>;
+  created_at?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
+  updated_at?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
   isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -1068,8 +1068,8 @@ export interface Loaders<
     light_vibrant?: LoaderResolver<Maybe<Scalars['String']>, Palette, {}, TContext>;
     muted?: LoaderResolver<Maybe<Scalars['String']>, Palette, {}, TContext>;
     vibrant?: LoaderResolver<Maybe<Scalars['String']>, Palette, {}, TContext>;
-    created_at?: LoaderResolver<Scalars['BigInt'], Palette, {}, TContext>;
-    updated_at?: LoaderResolver<Scalars['BigInt'], Palette, {}, TContext>;
+    created_at?: LoaderResolver<Scalars['DateTime'], Palette, {}, TContext>;
+    updated_at?: LoaderResolver<Scalars['DateTime'], Palette, {}, TContext>;
   };
 
   Podcast?: {
@@ -1082,14 +1082,14 @@ export interface Loaders<
     artwork?: LoaderResolver<Artwork, Podcast, {}, TContext>;
     episodes?: LoaderResolver<Array<Episode>, Podcast, PodcastepisodesArgs, TContext>;
     is_subscribed?: LoaderResolver<Scalars['Boolean'], Podcast, {}, TContext>;
-    created_at?: LoaderResolver<Scalars['BigInt'], Podcast, {}, TContext>;
-    updated_at?: LoaderResolver<Scalars['BigInt'], Podcast, {}, TContext>;
+    created_at?: LoaderResolver<Scalars['DateTime'], Podcast, {}, TContext>;
+    updated_at?: LoaderResolver<Scalars['DateTime'], Podcast, {}, TContext>;
   };
 
   Episode?: {
     id?: LoaderResolver<Scalars['BigInt'], Episode, {}, TContext>;
     podcast_id?: LoaderResolver<Scalars['BigInt'], Episode, {}, TContext>;
-    date?: LoaderResolver<Scalars['BigInt'], Episode, {}, TContext>;
+    date?: LoaderResolver<Scalars['DateTime'], Episode, {}, TContext>;
     title?: LoaderResolver<Scalars['String'], Episode, {}, TContext>;
     description?: LoaderResolver<Maybe<Scalars['String']>, Episode, {}, TContext>;
     progress?: LoaderResolver<Maybe<Scalars['Int']>, Episode, {}, TContext>;
@@ -1104,8 +1104,8 @@ export interface Loaders<
     episode_type?: LoaderResolver<Maybe<Scalars['String']>, Episode, {}, TContext>;
     podcast?: LoaderResolver<Podcast, Episode, {}, TContext>;
     artwork?: LoaderResolver<Artwork, Episode, {}, TContext>;
-    created_at?: LoaderResolver<Scalars['BigInt'], Episode, {}, TContext>;
-    updated_at?: LoaderResolver<Scalars['BigInt'], Episode, {}, TContext>;
+    created_at?: LoaderResolver<Scalars['DateTime'], Episode, {}, TContext>;
+    updated_at?: LoaderResolver<Scalars['DateTime'], Episode, {}, TContext>;
   };
 
   Category?: {
@@ -1120,8 +1120,8 @@ export interface Loaders<
     email?: LoaderResolver<Maybe<Scalars['String']>, User, {}, TContext>;
     avatar_url?: LoaderResolver<Maybe<Scalars['String']>, User, {}, TContext>;
     subscriptions?: LoaderResolver<Array<Podcast>, User, {}, TContext>;
-    created_at?: LoaderResolver<Scalars['BigInt'], User, {}, TContext>;
-    updated_at?: LoaderResolver<Scalars['BigInt'], User, {}, TContext>;
+    created_at?: LoaderResolver<Scalars['DateTime'], User, {}, TContext>;
+    updated_at?: LoaderResolver<Scalars['DateTime'], User, {}, TContext>;
   };
 
   Health?: {

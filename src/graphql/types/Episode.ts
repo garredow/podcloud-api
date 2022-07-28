@@ -4,7 +4,7 @@ export const Episode = gql`
   type Episode {
     id: BigInt!
     podcast_id: BigInt!
-    date: BigInt!
+    date: DateTime!
     title: String!
     description: String
     progress: Int
@@ -19,7 +19,7 @@ export const Episode = gql`
     episode_type: String
     podcast: Podcast!
     artwork: Artwork!
-    created_at: BigInt!
-    updated_at: BigInt!
+    created_at: DateTime!
+    updated_at: DateTime!
   }
 `;

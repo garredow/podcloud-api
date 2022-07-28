@@ -8,7 +8,7 @@ export const User = gql`
     email: String
     avatar_url: String
     subscriptions: [Podcast!]!
-    created_at: BigInt!
-    updated_at: BigInt!
+    created_at: DateTime!
+    updated_at: DateTime!
   }
 `;

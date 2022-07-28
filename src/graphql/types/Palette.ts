@@ -8,7 +8,7 @@ export const Palette = gql`
     light_vibrant: String
     muted: String
     vibrant: String
-    created_at: BigInt!
-    updated_at: BigInt!
+    created_at: DateTime!
+    updated_at: DateTime!
   }
 `;

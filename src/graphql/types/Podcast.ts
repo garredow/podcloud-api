@@ -12,7 +12,7 @@ export const Podcast = gql`
     episodes(count: Int!): [Episode!]!
     # categories: [Category!]!
     is_subscribed: Boolean!
-    created_at: BigInt!
-    updated_at: BigInt!
+    created_at: DateTime!
+    updated_at: DateTime!
   }
 `;
