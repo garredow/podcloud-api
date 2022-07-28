@@ -1,6 +1,5 @@
 import { FastifyInstance, FastifyReply, FastifyRequest } from 'fastify';
-import { getHealth } from './controllers/health';
-import { getCurrentUser } from './controllers/user';
+import { getHealth } from './controllers';
 
 const handleErrors =
   (controllerFn: (request: FastifyRequest, reply: FastifyReply) => any) =>
@@ -15,12 +14,6 @@ const handleErrors =
     });
 
 export async function routes(fastify: FastifyInstance) {
-  // User
-  fastify.get('/me', {
-    preValidation: fastify.authenticate,
-    handler: handleErrors(getCurrentUser),
-  });
-
   // Health
   fastify.get('/health', {
     handler: handleErrors(getHealth),

@@ -56,11 +56,11 @@ jobs:
             if [[ -z "${NEW_VERSION}" ]]; then
               echo "No new version. Skip docker build."
             else
-              echo "Building garredow/raincloud-api:${NEW_VERSION}"
+              echo "Building garredow/podcloud-api:${NEW_VERSION}"
               echo $(cat package.json)
               echo $DOCKER_TOKEN | docker login -u $DOCKER_USERNAME --password-stdin
-              docker build -t garredow/raincloud-api:$NEW_VERSION .
-              docker push garredow/raincloud-api:$NEW_VERSION
+              docker build -t garredow/podcloud-api:$NEW_VERSION-arm64 .
+              docker push garredow/podcloud-api:$NEW_VERSION-arm64
             fi
   deploy:
     executor: builder
@@ -77,7 +77,7 @@ jobs:
               echo "No new version. Skip deploy."
             else
               echo "Deploying v${NEW_VERSION}"
-              ssh -oStrictHostKeyChecking=no -v $DO_USER@$DO_IP_ADDRESS "./apps/raincloud-api/install.sh garredow/raincloud-api:${NEW_VERSION}"
+              ssh -oStrictHostKeyChecking=no -v $DO_USER@$DO_IP_ADDRESS "./apps/podcloud-api/install.sh garredow/podcloud-api:${NEW_VERSION}-arm64"
             fi
 
 workflows:

@@ -1,5 +1,3 @@
-import { FastifyRequest } from 'fastify';
-
-export function getUserId(request: FastifyRequest) {
+export function getUserId(request: any) {
   return (request.user as any).sub;
 }

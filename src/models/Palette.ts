@@ -7,6 +7,6 @@ export type Palette = {
   light_vibrant: string;
   muted: string;
   vibrant: string;
-  created_at: number;
-  updated_at: number;
+  created_at: string;
+  updated_at: string;
 };

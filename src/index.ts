@@ -1,21 +1,13 @@
 import { config } from './lib/config';
 require('newrelic');
+import mercuriusCodegen from 'mercurius-codegen';
 import { configureServer } from './server';
 
-const server = configureServer({
-  logger: {
-    name: 'podcloud-api',
-    enabled: config.logger.enabled,
-    level: config.logger.level,
-    file: config.logger.file,
-    formatters: {
-      level(label: any, number: any) {
-        return { level: label };
-      },
-    },
-    timestamp: () => `,"time":"${new Date().toISOString()}"`,
-  },
-});
+const server = configureServer();
+
+mercuriusCodegen(server, {
+  targetPath: './src/graphql/generated.ts',
+}).catch(console.error);
 
 server.listen({ port: config.meta.serverPort, host: '0.0.0.0' }, (err) => {
   if (err) {
