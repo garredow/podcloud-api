@@ -5,6 +5,6 @@ export const Health = gql`
     version: String!
     uptime: BigInt!
     date: String!
-    databaseLatency: Int!
+    database_latency: Int!
   }
 `;

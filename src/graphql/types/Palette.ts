@@ -2,13 +2,13 @@ import { gql } from 'mercurius-codegen';
 
 export const Palette = gql`
   type Palette {
-    darkMuted: String
-    darkVibrant: String
-    lightMuted: String
-    lightVibrant: String
+    dark_muted: String
+    dark_vibrant: String
+    light_muted: String
+    light_vibrant: String
     muted: String
     vibrant: String
-    createdAt: BigInt!
-    updatedAt: BigInt!
+    created_at: BigInt!
+    updated_at: BigInt!
   }
 `;

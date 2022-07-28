@@ -42,38 +42,38 @@ export const resolvers: IResolvers = {
     episodes(podcast, { count }, { dataClient }, info) {
       return count > 0 ? dataClient.episode.getRecent(podcast.id, count) : [];
     },
-    isSubscribed(podcast, args, { dataClient, userId }, info) {
+    is_subscribed(podcast, args, { dataClient, userId }, info) {
       return dataClient.podcast.checkIfSubscribed(userId, podcast.id);
     },
     artwork(podcast, args, context, info) {
-      return { podcastId: podcast.id };
+      return { podcast_id: podcast.id };
     },
   },
   Episode: {
     async podcast(episode, args, { dataClient }) {
-      const res = await dataClient.podcast.getById(episode.podcastId);
+      const res = await dataClient.podcast.getById(episode.podcast_id);
       return res as Podcast;
     },
     progress(episode, args, { dataClient, userId }) {
       return dataClient.episode.getEpisodeProgress(userId, episode.id);
     },
     artwork(episode, args, context, info) {
-      return { podcastId: episode.podcastId };
+      return { podcast_id: episode.podcast_id };
     },
   },
   Artwork: {
     url(obj, args, { dataClient }, info) {
-      return dataClient.artwork.getUrl(obj.podcastId);
+      return dataClient.artwork.getUrl(obj.podcast_id);
     },
     data(obj, { size, blur }, { dataClient }, info) {
       return dataClient.artwork.getImageData(
-        obj.podcastId,
+        obj.podcast_id,
         _.clamp(size ?? 256, 32, 1024),
         _.clamp(blur ?? 0, 0, 50)
       );
     },
     palette(obj, args, { dataClient }, info) {
-      return dataClient.artwork.getPalette(obj.podcastId);
+      return dataClient.artwork.getPalette(obj.podcast_id);
     },
   },
 };

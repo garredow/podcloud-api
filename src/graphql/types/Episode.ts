@@ -3,23 +3,23 @@ import { gql } from 'mercurius-codegen';
 export const Episode = gql`
   type Episode {
     id: BigInt!
-    podcastId: BigInt!
+    podcast_id: BigInt!
     date: BigInt!
     title: String!
     description: String
     progress: Int
     duration: Int
-    fileSize: Int
-    fileType: String
-    fileUrl: String
-    chaptersUrl: String
-    transcriptUrl: String
+    file_size: Int
+    file_type: String
+    file_url: String
+    chapters_url: String
+    transcript_url: String
     season: Int
     episode: Int
-    episodeType: String
+    episode_type: String
     podcast: Podcast!
     artwork: Artwork!
-    createdAt: BigInt!
-    updatedAt: BigInt!
+    created_at: BigInt!
+    updated_at: BigInt!
   }
 `;

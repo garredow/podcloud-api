@@ -3,14 +3,12 @@ import { gql } from 'mercurius-codegen';
 export const User = gql`
   type User {
     id: String!
-    firstName: String
-    lastName: String
+    first_name: String
+    last_name: String
     email: String
-    avatarUrl: String
-
+    avatar_url: String
     subscriptions: [Podcast!]!
-
-    createdAt: BigInt!
-    updatedAt: BigInt!
+    created_at: BigInt!
+    updated_at: BigInt!
   }
 `;
