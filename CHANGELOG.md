@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/garredow/podcloud-api/compare/v1.0.2...v1.0.3) (2022-07-28)
+
+
+### Bug Fixes
+
+* fix graphql schemas ([3df657d](https://github.com/garredow/podcloud-api/commit/3df657d5d480688d9d9bf2adb9b9336494f804a7))
+
 ## [1.0.2](https://github.com/garredow/podcloud-api/compare/v1.0.1...v1.0.2) (2022-07-28)
 
 
