@@ -5,6 +5,7 @@ import { resolvers as scalarResolvers, typeDefs as scalarTypeDefs } from 'graphq
 import mercurius from 'mercurius';
 import { LoggerOptions } from 'pino';
 import { Database } from './database/db';
+import { loaders } from './graphql/loaders';
 import { resolvers } from './graphql/resolvers';
 import { Artwork } from './graphql/types/Artwork';
 import { Category } from './graphql/types/Category';
@@ -80,11 +81,12 @@ export function configureServer() {
         User,
         Health,
       ],
-      resolvers: {
-        ...scalarResolvers,
-        ...resolvers,
-      } as any,
     }),
+    resolvers: {
+      ...scalarResolvers,
+      ...resolvers,
+    },
+    loaders,
     context: buildContext,
     graphiql: true,
   });
