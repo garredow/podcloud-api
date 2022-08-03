@@ -25,7 +25,9 @@ const db = new Database();
 const dataClient = new Data(db);
 
 const buildContext = async (req: FastifyRequest, reply: FastifyReply) => {
-  const res = await verifyToken(req.headers.authorization).catch(() => {});
+  const res = await verifyToken(req.headers.authorization).catch((err) => {
+    req.log.error(err, 'Token validation failed');
+  });
 
   const userId = res?.sub;
   if (!userId) {
