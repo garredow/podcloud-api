@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/garredow/podcloud-api/compare/v1.0.3...v1.1.0) (2022-08-05)
+
+
+### Bug Fixes
+
+* use datetime type for dates ([007b55f](https://github.com/garredow/podcloud-api/commit/007b55ff86f72b19d193c7fc5fe06e7365a8bfaa))
+
+
+### Features
+
+* add loader for episode podcasts ([8721ea7](https://github.com/garredow/podcloud-api/commit/8721ea70f02041453c3c55396f98298a99e92304))
+
 ## [1.0.3](https://github.com/garredow/podcloud-api/compare/v1.0.2...v1.0.3) (2022-07-28)
 
 
